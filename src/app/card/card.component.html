@@ -1,0 +1,15 @@
+  <div class="card" style="text-align: center;" *ngFor="let data of recievedData ; let i=index">
+      <h3 class="card-title">{{data.pname}}</h3>
+      <h5 class="card-title">Product Price:{{data.pprice}}</h5>
+    <div class="form-outline" style="width: 50%; margin: 0 auto;">
+      <button (click)="onBtnClick($event)" id="minus">-</button>
+      <input value="1" type="number" class="form-control"/>
+      <button (click)="onBtnClick($event)" id="plus">+</button>
+    </div>
+    <div>
+      <img [src]="data.pImg" class="card-img-top img" alt="image">
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary mt-4 mb-2" (click)="addToBag(i)">Add To Bag</button>
+    </div>
+  </div>

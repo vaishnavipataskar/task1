@@ -1,0 +1,25 @@
+    <table class="table table-striped">
+        <thead class="thead">
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Order Total</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of bagDataReceived; let i = index">
+                <td scope="row">{{data.pname}}</td>
+                <td scope="row">{{data.pprice}}</td>
+                <td scope="row">{{data.qty}}</td>
+                <td scope="row">{{data.pprice*data.qty}}</td>
+                <td scope="row"><i class="fa fa-times" aria-hidden="true" (click)="deleteAction(i)"></i></td>
+            </tr> 
+            <tr>
+              <td colspan="3">Total:</td>
+              <td>{{ calculateTotal() }}</td>
+              <td></td>
+            </tr>
+        </tbody>
+      </table> 
